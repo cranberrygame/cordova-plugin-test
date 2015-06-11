@@ -52,11 +52,11 @@ Achievement
 ## Cordova cli ##
 https://cordova.apache.org/docs/en/edge/guide_cli_index.md.html#The%20Command-Line%20Interface - npm install -g cordova@5.0.0
 ```c
-//caution: replace YOUR_GOOGLE_PLAY_GAME_APP_ID ex) 1064334934918
-cordova plugin add cordova-plugin-game --variable APP_ID="YOUR_GOOGLE_PLAY_GAME_APP_ID"
+//caution: replace 1064334934918 with your google play game app id
+cordova plugin add cordova-plugin-game --variable APP_ID="1064334934918"
 ```
 ## Xdk ##
-//caution: replace YOUR_GOOGLE_PLAY_GAME_APP_ID ex) 1064334934918<br>
+//caution: replace 1064334934918 with your google play game app id
 <img src="https://raw.githubusercontent.com/cranberrygame/cordova-plugin-game/master/doc/xdk_APP_ID.png"><br>
 https://github.com/cranberrygame/cordova-plugin-game/blob/master/doc/intelxdk.config.additions.xml
 ```c
@@ -64,16 +64,16 @@ https://github.com/cranberrygame/cordova-plugin-game/blob/master/doc/intelxdk.co
 
 ## Cocoon ##
 https://cocoon.io - Create project - [specific project] - Setting - Plugins - Custom - Git Url: https://github.com/cranberrygame/cordova-plugin-game.git - INSTALL - Save<br>
-//caution: replace YOUR_GOOGLE_PLAY_GAME_APP_ID ex) 1064334934918<br>
-https://cocoon.io - Create project - [specific project] - Setting - Plugins - Installed - Git Url https://github.com/cranberrygame/cordova-plugin-game.git - ADD PARAMETER - Name: APP_ID Value: YOUR_GOOGLE_PLAY_GAME_APP_ID - Save<br>
+//caution: replace 1064334934918 with your google play game app id
+https://cocoon.io - Create project - [specific project] - Setting - Plugins - Installed - Git Url https://github.com/cranberrygame/cordova-plugin-game.git - ADD PARAMETER - Name: APP_ID Value: 1064334934918 - Save<br>
 <img src="https://raw.githubusercontent.com/cranberrygame/cordova-plugin-game/master/doc/cocoon_APP_ID"><br>
 
 ## Phonegap build service (config.xml) ##
 https://build.phonegap.com/ - Apps - [specific project] - Update code - Zip file including config.xml
 ```c
-//caution: replace YOUR_GOOGLE_PLAY_GAME_APP_ID ex) 1064334934918<br>
+//caution: replace 1064334934918 with your google play game app id<br>
 <gap:plugin name="cordova-plugin-game" source="npm" >
-    <param name="APP_ID" value="YOUR_GOOGLE_PLAY_GAME_APP_ID" />
+    <param name="APP_ID" value="1064334934918" />
 </gap:plugin>
 ```
 
