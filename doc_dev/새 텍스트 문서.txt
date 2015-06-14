@@ -1,0 +1,2 @@
+
+https://github.com/Wizcorp/phonegap-facebook-plugin/tree/3d52b1eb8a55ebcf8ad10c75d99deedeca0c0fdd
