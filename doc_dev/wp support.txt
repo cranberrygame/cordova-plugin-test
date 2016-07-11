@@ -1,0 +1,4 @@
+
+Admob not work on Windows Phone 8.1 yet, only on Windows Phone 8 or Windows Phone Silverlight 8.1 
+http://stackoverflow.com/questions/23163309/windows-phone-8-1-admob-sdk-for-wp8
+https://groups.google.com/forum/#!msg/google-admob-ads-sdk/5WyPFuMGKig/xGnh_nw8nQgJ
