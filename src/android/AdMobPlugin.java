@@ -204,9 +204,9 @@ public class AdMobPlugin extends CordovaPlugin implements PluginDelegate, Plugin
 		callbackContextKeepCallback = callbackContext;
 		
 		if(isOverlap)
-			pluginDelegate = new AdmobOverlap(this);
+			pluginDelegate = new AdMobOverlap(this);
 		else
-			pluginDelegate = new AdmobSplit(this);
+			pluginDelegate = new AdMobSplit(this);
 		
 		cordova.getActivity().runOnUiThread(new Runnable() {
 			@Override
