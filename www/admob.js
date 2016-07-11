@@ -173,7 +173,7 @@ module.exports = {
             null,
             'AdMobPlugin',
             'preloadInterstitialAd',
-            [location]
+            []
         ); 
     },
     showInterstitialAd: function() {
@@ -182,7 +182,7 @@ module.exports = {
             null,
             'AdMobPlugin',
             'showInterstitialAd',
-            [location]
+            []
         ); 
     },	
 	loadedBannerAd: function() {
