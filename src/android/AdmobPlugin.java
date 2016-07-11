@@ -51,8 +51,8 @@ interface PluginDelegate {
     public void onDestroy();
 }
 
-public class AdmobPlugin extends CordovaPlugin implements PluginDelegate, Plugin {
-	protected static final String LOG_TAG = "AdmobPlugin";	
+public class AdMobPlugin extends CordovaPlugin implements PluginDelegate, Plugin {
+	protected static final String LOG_TAG = "AdMobPlugin";	
 	protected CallbackContext callbackContextKeepCallback;
 	//
 	protected PluginDelegate pluginDelegate;
@@ -291,7 +291,7 @@ public class AdmobPlugin extends CordovaPlugin implements PluginDelegate, Plugin
 
 	//cranberrygame end: Plugin
 	
-	//cranberrygame start: AdmobPluginDelegate
+	//cranberrygame start: AdMobPluginDelegate
 
 	public void _setLicenseKey(String email, String licenseKey) {
 		//pluginDelegate._setLicenseKey(email, licenseKey);
@@ -361,5 +361,5 @@ public class AdmobPlugin extends CordovaPlugin implements PluginDelegate, Plugin
 		pluginDelegate._showInterstitialAd();
 	}
 
-	//cranberrygame end: AdmobPluginDelegate
+	//cranberrygame end: AdMobPluginDelegate
 }
