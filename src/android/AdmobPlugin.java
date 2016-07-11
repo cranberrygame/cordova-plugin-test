@@ -363,3 +363,4 @@ public class AdMobPlugin extends CordovaPlugin implements PluginDelegate, Plugin
 
 	//cranberrygame end: AdMobPluginDelegate
 }
+
