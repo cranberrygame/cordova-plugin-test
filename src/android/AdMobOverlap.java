@@ -650,7 +650,7 @@ public class AdMobOverlap implements PluginDelegate {
 			//pr.setKeepCallback(true);
 			//callbackContextKeepCallback.sendPluginResult(pr);				  
 		}	
-	};
+	}
 	
     public void onPause(boolean multitasking) {
 		if (bannerView != null) {
