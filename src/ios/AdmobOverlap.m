@@ -365,16 +365,9 @@
 }
 
 - (void) loadRewardedVideoAd {
-<<<<<<< HEAD
     if (rewardedVideo == nil){
         self.rewardedVideo = [GADRewardBasedVideoAd sharedInstance];
         //
-=======
-    if (rewardedVideo == nil || self.rewardedVideo.hasBeenUsed){//ios only //An interstitial object can only be used once for ios
-        self.rewardedVideo = [GADRewardBasedVideoAd sharedInstance];
-        //
-		self.rewardedVideo.adUnitID = rewardedVideoAdUnit;
->>>>>>> origin/master
         self.rewardedVideo.delegate = self;
     }	
 	
@@ -387,22 +380,14 @@
         [self md5:adid.UUIDString],
         nil];
     }
-<<<<<<< HEAD
 	[self.rewardedVideo loadRequest:request withAdUnitID:self.rewardedVideoAdUnit];
-=======
-	[self.rewardedVideo loadRequest:request withAdUnitID:rewardedVideoAdUnit];	
->>>>>>> origin/master
 }
 
 - (void) _showRewardedVideoAd {
     if(rewardedVideoAdPreload) {
         rewardedVideoAdPreload = NO;
         
-<<<<<<< HEAD
         [rewardedVideo presentFromRootViewController:[plugin getViewController]];
-=======
-        [rewardedVideo presentFromRootViewController:[self getViewController]];
->>>>>>> origin/master
     }
     else {
         [self loadRewardedVideoAd];
@@ -536,11 +521,7 @@
 	//[[self.plugin getCommandDelegate] sendPluginResult:pr callbackId:[self.plugin getCallbackIdKeepCallback]];
 	
 	if(!rewardedVideoAdPreload) {
-<<<<<<< HEAD
 		[rewardedVideo presentFromRootViewController:[plugin getViewController]];
-=======
-		[rewardedVideo presentFromRootViewController:[self getViewController]];
->>>>>>> origin/master
 	}
 }
 
@@ -590,17 +571,10 @@
 	
     CDVPluginResult* pr = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"onRewardedVideoAdCompleted"];
     [pr setKeepCallbackAsBool:YES];
-<<<<<<< HEAD
     [[self.plugin getCommandDelegate] sendPluginResult:pr callbackId:[self.plugin getCallbackIdKeepCallback]];
     //CDVPluginResult* pr = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
     //[pr setKeepCallbackAsBool:YES];
     //[[self.plugin getCommandDelegate] sendPluginResult:pr callbackId:[self.plugin getCallbackIdKeepCallback]];
-=======
-    [[revMobPluginOverlap.plugin getCommandDelegate] sendPluginResult:pr callbackId:[revMobPluginOverlap.plugin getCallbackIdKeepCallback]];
-    //CDVPluginResult* pr = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
-    //[pr setKeepCallbackAsBool:YES];
-    //[[revMobPluginOverlap.plugin getCommandDelegate] sendPluginResult:pr callbackId:[revMobPluginOverlap.plugin getCallbackIdKeepCallback]];	
->>>>>>> origin/master
 }
 
 //
