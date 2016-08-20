@@ -573,7 +573,7 @@ public class AdMobOverlap implements PluginDelegate {
     	}
     }
 
-	class MyRewardedVideoAdListener extends RewardedVideoAdListener {
+	class MyRewardedVideoAdListener implements RewardedVideoAdListener {
 		
 		@Override
 		public void onRewardedVideoAdFailedToLoad(int errorCode) {
