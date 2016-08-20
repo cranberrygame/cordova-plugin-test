@@ -4,7 +4,7 @@
 //License: MIT (http://opensource.org/licenses/MIT)
 #import "AdMobPlugin.h"
 
-@interface AdMobOverlap : NSObject <PluginDelegate, GADBannerViewDelegate, GADInterstitialDelegate>
+@interface AdMobOverlap : NSObject <PluginDelegate, GADBannerViewDelegate, GADInterstitialDelegate, GADRewardBasedVideoAdDelegate>
 
 @property id<Plugin> plugin;
 //
