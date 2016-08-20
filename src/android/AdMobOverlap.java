@@ -453,7 +453,7 @@ public class AdMobOverlap implements PluginDelegate {
 			//rewardedVideo = new RewardedVideoAd(plugin.getCordova().getActivity());
 			rewardedVideo = MobileAds.getRewardedVideoAdInstance(plugin.getCordova().getActivity());
 			//
-			rewardedVideo.setAdUnitId(this.rewardedVideoAdUnit);
+			//rewardedVideo.setAdUnitId(this.rewardedVideoAdUnit);
 			rewardedVideo.setAdListener(new MyRewardVideoListener());					
 		}		
 		
@@ -463,7 +463,7 @@ public class AdMobOverlap implements PluginDelegate {
 			//builder.addTestDevice("INSERT_YOUR_HASHED_DEVICE_ID_HERE");				
 			String ANDROID_ID = Settings.Secure.getString(plugin.getCordova().getActivity().getContentResolver(), android.provider.Settings.Secure.ANDROID_ID);
 			String deviceId = Util.md5(ANDROID_ID).toUpperCase();
-			builder.addTestDevice(deviceId);		
+			builder.addTestDevice(this.rewardedVideoAdUnit, deviceId);		
 		}
 		AdRequest request = builder.build();			
 		rewardedVideo.loadAd(request);		
