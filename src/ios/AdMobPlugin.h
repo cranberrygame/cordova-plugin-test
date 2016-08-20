@@ -12,8 +12,10 @@
 #import <GoogleMobileAds/GADBannerViewDelegate.h>
 #import <GoogleMobileAds/GADInterstitialDelegate.h>
 #import <GoogleMobileAds/GADExtras.h>
+#import <GoogleMobileAds/GADRewardBasedVideoAdDelegate.h>
 */
-#import <GoogleMobileAds/GoogleMobileAds.h>
+//#import <GoogleMobileAds/GoogleMobileAds.h>
+@import GoogleMobileAds;
 
 @protocol Plugin <NSObject>
 - (UIWebView*) getWebView;
