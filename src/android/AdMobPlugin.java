@@ -305,14 +305,7 @@ public class AdMobPlugin extends CordovaPlugin implements PluginDelegate, Plugin
 			}
 		});
 	}
-	
-	public void _preloadRewardedVideoAd() {
-		pluginDelegate._preloadRewardedVideoAd();
-	}
-	
-	public void _showRewardedVideoAd() {
-		pluginDelegate._showRewardedVideoAd();
-	}	
+
 	//cranberrygame start: Plugin
 
 	public CordovaWebView getWebView() {
