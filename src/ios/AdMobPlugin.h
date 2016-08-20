@@ -5,6 +5,7 @@
 #import <Foundation/Foundation.h>
 #import <Cordova/CDV.h>
 //
+<<<<<<< HEAD
 //@import GoogleMobileAds;
 #import <GoogleMobileAds/GADAdSize.h>
 #import <GoogleMobileAds/GADBannerView.h>
@@ -13,6 +14,9 @@
 #import <GoogleMobileAds/GADInterstitialDelegate.h>
 #import <GoogleMobileAds/GADExtras.h>
 #import <GoogleMobileAds/GADRewardBasedVideoAdDelegate.h>
+=======
+@import GoogleMobileAds;
+>>>>>>> origin/master
 
 @protocol Plugin <NSObject>
 - (UIWebView*) getWebView;
