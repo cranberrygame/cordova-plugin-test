@@ -463,10 +463,10 @@ public class AdMobOverlap implements PluginDelegate {
 			//builder.addTestDevice("INSERT_YOUR_HASHED_DEVICE_ID_HERE");				
 			String ANDROID_ID = Settings.Secure.getString(plugin.getCordova().getActivity().getContentResolver(), android.provider.Settings.Secure.ANDROID_ID);
 			String deviceId = Util.md5(ANDROID_ID).toUpperCase();
-			builder.addTestDevice(this.rewardedVideoAdUnit, deviceId);		
+			builder.addTestDevice(deviceId);		
 		}
 		AdRequest request = builder.build();			
-		rewardedVideo.loadAd(request);		
+		rewardedVideo.loadAd(this.rewardedVideoAdUnit, request);		
 	}
 	
 	public void _showRewardedVideoAd() {
