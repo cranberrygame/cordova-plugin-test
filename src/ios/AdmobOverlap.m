@@ -2,11 +2,11 @@
 //Email: cranberrygame@yahoo.com
 //Homepage: http://cranberrygame.github.io
 //License: MIT (http://opensource.org/licenses/MIT)
-#import "AdmobOverlap.h"
+#import "AdMobOverlap.h"
 #import <AdSupport/ASIdentifierManager.h>
 #import <CommonCrypto/CommonDigest.h> //md5
 
-@implementation AdmobOverlap
+@implementation AdMobOverlap
 
 @synthesize plugin;
 //
@@ -32,7 +32,7 @@
         [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
         [[NSNotificationCenter defaultCenter]
          addObserver:self
-         selector:@selector(deviceOrientationChangeAdmob:)
+         selector:@selector(deviceOrientationChangeAdMob:)
          name:UIDeviceOrientationDidChangeNotification
          object:nil];
     }
@@ -40,7 +40,7 @@
 }
 */
 
-- (void) deviceOrientationChangeAdmob:(NSNotification *)notification {
+- (void) deviceOrientationChangeAdMob:(NSNotification *)notification {
     if (bannerView != nil) {
 /*	
         CGRect bannerFrame = bannerView.frame;

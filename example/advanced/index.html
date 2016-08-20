@@ -8,28 +8,32 @@
 
 var bannerAdUnit = "ca-app-pub-4906074177432504/9172302471";
 var interstitialAdUnit = "ca-app-pub-4906074177432504/1649035673";
+var rewardedVideoAdUnit = "";
 var isOverlap = true; //true: overlap, false: split
 var isTest = true;
 /*
 var bannerAdUnit;
 var interstitialAdUnit;
+var rewardedVideoAdUnit;
 var isOverlap = true; //true: overlap, false: split
 var isTest = true;
 //android
 if (navigator.userAgent.match(/Android/i)) {
 	bannerAdUnit = "ca-app-pub-4906074177432504/9172302471";
 	interstitialAdUnit = "ca-app-pub-4906074177432504/1649035673";
+	rewardedVideoAdUnit = "";
 }
 //ios
 else if (navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i)) {
 	bannerAdUnit = "ca-app-pub-4906074177432504/4602502071";
 	interstitialAdUnit = "ca-app-pub-4906074177432504/7555968477";
+	rewardedVideoAdUnit = "";
 }
 */
 
 document.addEventListener("deviceready", function(){
 
-	window.admob.setUp(bannerAdUnit, interstitialAdUnit, isOverlap, isTest);
+	window.admob.setUp(bannerAdUnit, interstitialAdUnit, rewardedVideoAdUnit, isOverlap, isTest);
 
 	//
 	window.admob.onBannerAdPreloaded = function() {
@@ -57,6 +61,22 @@ document.addEventListener("deviceready", function(){
 	window.admob.onInterstitialAdHidden = function() {
 		alert('onInterstitialAdHidden');
 	};
+	//
+	window.admob.onRewardedVideoAdPreloaded = function() {
+		alert('onRewardedVideoAdPreloaded');
+	};
+	window.admob.onRewardedVideoAdLoaded = function() {
+		alert('onRewardedVideoAdLoaded');
+	};
+	window.admob.onRewardedVideoAdShown = function() {
+		alert('onRewardedVideoAdShown');
+	};
+	window.admob.onRewardedVideoAdHidden = function() {
+		alert('onRewardedVideoAdHidden');
+	};
+	window.admob.onRewardedVideoAdCompleted = function() {
+		alert('onRewardedVideoAdCompleted');
+	};	
 }, false);
 	
 /*

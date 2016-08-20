@@ -2,13 +2,13 @@
 //Email: cranberrygame@yahoo.com
 //Homepage: http://cranberrygame.github.io
 //License: MIT (http://opensource.org/licenses/MIT)
-#import "Admob.h"
+#import "AdMobPlugin.h"
 //
-#import "AdmobOverlap.h"
-#import "AdmobSplit.h"
+#import "AdMobOverlap.h"
+#import "AdMobSplit.h"
 #import <CommonCrypto/CommonDigest.h> //md5
 
-@implementation Admob
+@implementation AdMobPlugin
 
 @synthesize callbackIdKeepCallback;
 //
@@ -60,9 +60,9 @@ static NSString *TEST_INTERSTITIAL_AD_UNIT = @"ca-app-pub-4906074177432504/57632
     self.callbackIdKeepCallback = command.callbackId;
 
     if(isOverlap)
-        pluginDelegate = [[AdmobOverlap alloc] initWithPlugin:self];
+        pluginDelegate = [[AdMobOverlap alloc] initWithPlugin:self];
     else
-        pluginDelegate = [[AdmobSplit alloc] initWithPlugin:self];
+        pluginDelegate = [[AdMobSplit alloc] initWithPlugin:self];
     
     //[self.commandDelegate runInBackground:^{
         [self _setUp:bannerAdUnit anInterstitialAdUnit:interstitialAdUnit anIsOverlap:isOverlap anIsTest:isTest];
@@ -158,7 +158,7 @@ static NSString *TEST_INTERSTITIAL_AD_UNIT = @"ca-app-pub-4906074177432504/57632
 		NSLog(@"valid licenseKey");
 	else {
 		NSLog(@"invalid licenseKey");
-		//UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alert" message:@"Cordova Admob: invalid email / license key. You can get free license key from https://play.google.com/store/apps/details?id=com.cranberrygame.pluginsforcordova" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+		//UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alert" message:@"Cordova AdMob: invalid email / license key. You can get free license key from https://play.google.com/store/apps/details?id=com.cranberrygame.pluginsforcordova" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
 		//[alert show];		
 	}
 }

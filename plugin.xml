@@ -2,9 +2,9 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="cordova-plugin-ad-admob"
-    version="1.0.107">
+    version="1.0.112">
 	
-    <name>Cordova Admob plugin</name>
+    <name>Cordova AdMob plugin</name>
     <description>Show admob banner and interstitial ad</description>
     <author>Sang Ki Kwon (Cranberrygame)</author>		
     <license>MIT</license>
@@ -38,14 +38,14 @@
 	<!-- ios -->
 	<platform name="ios">
 		<config-file target="config.xml" parent="/*">
-			<feature name="Admob">
-				<param name="ios-package" value="Admob" />
+			<feature name="AdMobPlugin">
+				<param name="ios-package" value="AdMobPlugin" />
 				<param name="onload" value="true" />
 			</feature>
 		</config-file>
 		
-		<header-file src="src/ios/Admob.h" />
-		<source-file src="src/ios/Admob.m" />
+		<header-file src="src/ios/AdMobPlugin.h" />
+		<source-file src="src/ios/AdMobPlugin.m" />
 		<header-file src="src/ios/AdmobOverlap.h" />
 		<source-file src="src/ios/AdmobOverlap.m" />
 		<header-file src="src/ios/AdmobSplit.h" />
@@ -58,12 +58,12 @@
     <!-- wp8 -->
     <platform name="wp8">		
         <config-file target="config.xml" parent="/*">
-            <feature name="Admob">
-                <param name="wp-package" value="Admob"/>
+            <feature name="AdMobPlugin">
+                <param name="wp-package" value="AdMobPlugin"/>
             </feature>
         </config-file>
 
-        <source-file src="src/wp8/Admob.cs" />
+        <source-file src="src/wp8/AdMobPlugin.cs" />
         <source-file src="src/wp8/AdmobOverlap.cs" />
         <source-file src="src/wp8/AdmobSplit.cs" />
 		<framework src="src/wp8/Silverlight.Md5.dll" custom="true" />		
