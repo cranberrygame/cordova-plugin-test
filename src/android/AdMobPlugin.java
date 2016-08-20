@@ -39,7 +39,7 @@ interface Plugin {
 
 interface PluginDelegate {
 	public void _setLicenseKey(String email, String licenseKey);
-	public void _setUp(String bannerAdUnit, String interstitialAdUnit, boolean isOverlap, boolean isTest);
+	public void _setUp(String bannerAdUnit, String interstitialAdUnit, String rewardedVideoAdUnit, boolean isOverlap, boolean isTest);
 	public void _preloadBannerAd();
 	public void _showBannerAd(String position, String size);
 	public void _reloadBannerAd();
@@ -207,6 +207,7 @@ public class AdMobPlugin extends CordovaPlugin implements PluginDelegate, Plugin
 		//Log.d(LOG_TAG, String.format("%b", isTest));		
 		final String bannerAdUnit = args.getString(0);
 		final String interstitialAdUnit = args.getString(1);				
+		final String rewardedVideoAdUnit = args.getString(2);				
 		final boolean isOverlap = args.getBoolean(2);				
 		final boolean isTest = args.getBoolean(3);				
 		Log.d(LOG_TAG, String.format("%s", bannerAdUnit));			
@@ -224,7 +225,7 @@ public class AdMobPlugin extends CordovaPlugin implements PluginDelegate, Plugin
 		cordova.getActivity().runOnUiThread(new Runnable() {
 			@Override
 			public void run() {
-				_setUp(bannerAdUnit, interstitialAdUnit, isOverlap, isTest);
+				_setUp(bannerAdUnit, interstitialAdUnit, rewardedVideoAdUnit, isOverlap, isTest);
 			}
 		});
 	}
@@ -305,14 +306,7 @@ public class AdMobPlugin extends CordovaPlugin implements PluginDelegate, Plugin
 			}
 		});
 	}
-	
-	public void _preloadRewardedVideoAd() {
-		pluginDelegate._preloadRewardedVideoAd();
-	}
-	
-	public void _showRewardedVideoAd() {
-		pluginDelegate._showRewardedVideoAd();
-	}	
+
 	//cranberrygame start: Plugin
 
 	public CordovaWebView getWebView() {

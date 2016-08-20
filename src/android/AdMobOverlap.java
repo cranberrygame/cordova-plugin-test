@@ -451,10 +451,10 @@ public class AdMobOverlap implements PluginDelegate {
 	public void loadRewardedVideoAd() {
 		if (rewardedVideo == null) {
 			//rewardedVideo = new RewardedVideoAd(plugin.getCordova().getActivity());
-			rewardedVideo = MobileAds.getRewardedVideoAdInstance(getActivity());
+			rewardedVideo = MobileAds.getRewardedVideoAdInstance(plugin.getCordova().getActivity());
 			//
-			rewardedVideo.setAdUnitId(this.rewardedVideoAdUnit);
-			rewardedVideo.setAdListener(new MyRewardVideoListener());					
+			//rewardedVideo.setAdUnitId(this.rewardedVideoAdUnit);
+			rewardedVideo.setRewardedVideoAdListener(new MyRewardedVideoAdListener());	
 		}		
 		
 		AdRequest.Builder builder = new AdRequest.Builder();
@@ -466,7 +466,7 @@ public class AdMobOverlap implements PluginDelegate {
 			builder.addTestDevice(deviceId);		
 		}
 		AdRequest request = builder.build();			
-		rewardedVideo.loadAd(request);		
+		rewardedVideo.loadAd(this.rewardedVideoAdUnit, request);		
 	}
 	
 	public void _showRewardedVideoAd() {
@@ -573,7 +573,7 @@ public class AdMobOverlap implements PluginDelegate {
     	}
     }
 
-	class MyRewardedVideoAdListener extends RewardedVideoAdListener {
+	class MyRewardedVideoAdListener implements RewardedVideoAdListener {
 		
 		@Override
 		public void onRewardedVideoAdFailedToLoad(int errorCode) {
@@ -643,6 +643,12 @@ public class AdMobOverlap implements PluginDelegate {
 		public void onRewarded(RewardItem reward) {
 			Log.d(LOG_TAG, String.format("%s", "onRewarded"));
 		  
+/*
+      String obj = __getProductShortName();
+      String json = String.format("{'adNetwork':'%s','adType':'%s','adEvent':'%s','rewardType':'%s','rewardAmount':%d}",
+              obj, ADTYPE_REWARDVIDEO, EVENT_AD_PRESENT, reward.getType(), reward.getAmount());
+*/			  
+		  
 			PluginResult pr = new PluginResult(PluginResult.Status.OK, "onRewardedVideoAdCompleted");
 			pr.setKeepCallback(true);
 			plugin.getCallbackContextKeepCallback().sendPluginResult(pr);
@@ -650,7 +656,7 @@ public class AdMobOverlap implements PluginDelegate {
 			//pr.setKeepCallback(true);
 			//callbackContextKeepCallback.sendPluginResult(pr);				  
 		}	
-	};
+	}
 	
     public void onPause(boolean multitasking) {
 		if (bannerView != null) {

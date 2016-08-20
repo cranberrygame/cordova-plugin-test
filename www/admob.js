@@ -19,7 +19,12 @@ module.exports = {
         ); 
     },
 	setUp: function(bannerAdUnit, interstitialAdUnit, rewardedVideoAdUnit, isOverlap, isTest) {
-		var self = this;	
+        if (typeof isTest == 'undefined') {
+            isOverlap=rewardedVideoAdUnit;
+            isTest=isOverlap;
+        }
+        
+		var self = this;
         cordova.exec(
             function (result) {
 				if (typeof result == "string") {
