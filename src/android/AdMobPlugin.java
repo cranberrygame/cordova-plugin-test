@@ -39,7 +39,7 @@ interface Plugin {
 
 interface PluginDelegate {
 	public void _setLicenseKey(String email, String licenseKey);
-	public void _setUp(String bannerAdUnit, String interstitialAdUnit, boolean isOverlap, boolean isTest);
+	public void _setUp(String bannerAdUnit, String interstitialAdUnit, String rewardedVideoAdUnit, boolean isOverlap, boolean isTest);
 	public void _preloadBannerAd();
 	public void _showBannerAd(String position, String size);
 	public void _reloadBannerAd();
@@ -224,7 +224,7 @@ public class AdMobPlugin extends CordovaPlugin implements PluginDelegate, Plugin
 		cordova.getActivity().runOnUiThread(new Runnable() {
 			@Override
 			public void run() {
-				_setUp(bannerAdUnit, interstitialAdUnit, isOverlap, isTest);
+				_setUp(bannerAdUnit, interstitialAdUnit, rewardedVideoAdUnit, isOverlap, isTest);
 			}
 		});
 	}
